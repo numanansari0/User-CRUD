@@ -1,61 +1,168 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# 🧑‍💻 Laravel User Management (AJAX + Bootstrap Modals)
 
-## About Laravel
+A modern, clean, and responsive **User Management CRUD** system built with Laravel, Bootstrap 5, and AJAX. Includes:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Live user listing with DataTables
+- Add & Update via Bootstrap Modals
+- Password validation rules
+- Delete with confirmation modal
+- Toastr notifications
+- JSON API-driven backend
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 Tech Stack
 
-## Learning Laravel
+- **Laravel 10**
+- **Bootstrap 5**
+- **jQuery + AJAX**
+- **DataTables**
+- **Toastr**
+- **MySQL** (or any Laravel-supported DB)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 📦 Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- ✅ Fully RESTful CRUD (using resource controller)
+- ✅ Clean UX with modals for Add/Edit/Delete
+- ✅ Password rules: min 6 chars, 1 uppercase, 1 number, 1 special char
+- ✅ Proper validation via Form Requests
+- ✅ Server-side error display (Toastr)
+- ✅ Responsive and mobile-friendly UI
+- ✅ JSON response structure
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 📁 Folder Structure
 
-### Premium Partners
+```
+├── app
+│   ├── Http
+│   │   ├── Controllers
+│   │   │   └── UserController.php
+│   │   └── Requests
+│   │       ├── StoreUserRequest.php
+│   │       └── UpdateUserRequest.php
+├── resources
+│   └── views
+│       ├── layout.blade.php
+│       └── users
+│           ├── index.blade.php
+│           └── partials
+│               └── modals.blade.php
+├── routes
+│   └── web.php
+└── public
+    └── screenshots
+        ├── user-list.png
+        ├── add-user.png
+        ├── edit-user.png
+        └── delete-user.png
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 🛠️ Setup Instructions
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-repo/user-management-crud.git
+    ```
 
-## Code of Conduct
+2. Navigate into the project:
+    ```bash
+    cd user-management-crud
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3. Install dependencies:
+    ```bash
+    composer install
+    npm install && npm run dev
+    ```
 
-## Security Vulnerabilities
+4. Configure `.env`:
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5. Set DB credentials and run migrations:
+    ```bash
+    php artisan migrate
+    ```
 
-## License
+6. Start local server:
+    ```bash
+    php artisan serve
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+7. Visit `http://127.0.0.1:8000/users`
+
+---
+
+## 🖼️ Screenshots
+
+### 🧑 User List
+![User List](public/screenshots/user-list.png)
+
+### ➕ Add User Modal
+![Add User](public/screenshots/add-user.png)
+
+### ✏️ Edit User Modal
+![Edit User](public/screenshots/edit-user.png)
+
+### 🗑️ Delete Confirmation
+![Delete User](public/screenshots/delete-user.png)
+
+---
+
+## 🔒 Password Rules
+
+- Minimum 6 characters  
+- At least 1 uppercase letter  
+- At least 1 numeric digit  
+- At least 1 special character (`@, #, $, %, etc`)
+
+**Example:** `Hello@123`
+
+---
+
+## 🔄 API Responses
+
+All requests return JSON with success/error structure:
+```json
+{
+  "status": true,
+  "message": "User created successfully."
+}
+```
+
+Validation errors return:
+```json
+{
+  "errors": {
+    "email": ["The email field must be a valid email address."]
+  }
+}
+```
+
+---
+
+## 🙌 Contributions
+
+Feel free to fork and improve this project. PRs are welcome. Please follow PSR-12 and Laravel best practices.
+
+---
+
+## 👨‍💻 Author
+
+**Senior Laravel Developer — Muhammad Numan**  
+Crafted with performance, maintainability, and clean UX in mind.
+
+---
+
+## 📝 License
+
+MIT — Free to use and modify.
